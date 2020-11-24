@@ -10,8 +10,7 @@ class _$Injector extends Injector {
   @override
   void configure() {
     final KiwiContainer container = KiwiContainer();
-    container.registerSingleton((c) => APIService(c<Dio>()));
     container.registerSingleton((c) => NavigationService());
-    container.registerSingleton((c) => WalletService(c<APIService>()));
+    container.registerSingleton((c) => HomeService());
   }
 }

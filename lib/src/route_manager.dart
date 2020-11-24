@@ -1,5 +1,5 @@
 import 'package:expense_manager/src/commons/constants/routes_constant.dart';
-import 'package:expense_manager/src/wallet/screens/wallet.dart';
+import 'package:expense_manager/src/home/screens/wallet.dart';
 import 'package:flutter/material.dart';
 
 class RouteManager {

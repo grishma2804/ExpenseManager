@@ -23,37 +23,20 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  charts_flutter: ^0.9.0
-  syncfusion_flutter_charts: ^18.3.50
-  syncfusion_flutter_calendar: ^18.3.50
   flutter_masked_text: ^0.8.0
-  numeric_keyboard: ^1.0.0
-  flutter_icons: ^1.1.0
-  rflutter_alert: ^1.1.0
-  flutter_spinkit: ^4.1.2+1
-  dio: ^3.0.10
   kiwi: ^2.1.1
   equatable: ^1.2.5
   flutter_bloc: ^6.1.1
-  dotted_border: ^1.0.6
-  dash_chat: ^1.1.15
-  expandable: ^4.1.4
   flutter_responsive_screen: ^1.0.0
-  pin_input_text_field: ^3.1.1
   json_annotation: ^3.1.0
   hive: ^1.4.4+1
   hive_flutter: ^0.3.1
   path_provider: ^1.6.24
   fluttertoast: ^7.1.1
-  file_picker: ^2.0.13
-  flutter_native_image: ^0.0.5+3
-  timeago: ^2.0.28
-  package_info: ^0.4.3+2
   flutter_boxicons: ^2.0.1
   flutter_screenutil: ^3.2.0
-  shared_preferences: ^0.5.12+4
-  hydrated_bloc: ^6.1.0
   bezier_chart: ^1.0.17+1
+  intl: ^0.16.1
 
 
   # The following adds the Cupertino Icons font to your application.
@@ -95,17 +78,12 @@ flutter:
   # "family" key with the font family name, and a "fonts" key with a
   # list giving the asset and other descriptors for the font. For
   # example:
-  # fonts:
-  #   - family: Schyler
-  #     fonts:
-  #       - asset: fonts/Schyler-Regular.ttf
-  #       - asset: fonts/Schyler-Italic.ttf
-  #         style: italic
-  #   - family: Trajan Pro
-  #     fonts:
-  #       - asset: fonts/TrajanPro.ttf
-  #       - asset: fonts/TrajanPro_Bold.ttf
-  #         weight: 700
-  #
+  fonts:
+    - family: NeusaNextPro
+      fonts:
+        - asset: assets/fonts/neusa.next/NeusaNextPro-Regular.otf
+          weight: 700
+
+
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
