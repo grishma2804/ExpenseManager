@@ -7,10 +7,8 @@ import 'package:expense_manager/src/home/blocs/home/home_bloc.dart';
 import 'package:expense_manager/src/home/models/budget.dart';
 import 'package:expense_manager/src/home/models/expense.dart';
 import 'package:expense_manager/src/home/widgets/budget_bottom_sheet.dart';
-import 'package:expense_manager/src/home/widgets/budget_item.dart';
 import 'package:expense_manager/src/home/widgets/budget_list.dart';
 import 'package:expense_manager/src/home/widgets/expense_bottom_sheet.dart';
-import 'package:expense_manager/src/home/widgets/expense_item.dart';
 import 'package:expense_manager/src/home/widgets/expense_list.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -276,133 +274,122 @@ class _WalletState extends State<Wallet> {
 
   Container buildEmptyExpenseContainer(BuildContext context) {
     return Container(
-                      height: 200.h,
-                      child: Column(
-                        children: [
-                          IconButton(
-                            icon: Icon(
-                              Boxicons.bxs_plus_circle,
-                              color: AppColors.primary,
-                            ),
-                            onPressed: () {
-                              _displayBottomSheet(
-                                  context, EnterExpenseWidget());
-                            },
-                          ),
-                          SizedBox(
-                            height: 20,
-                          ),
-                          Center(
-                              child: Text(
-                            "No expense yet, \n Create one",
-                            textAlign: TextAlign.center,
-                            style: TextStyle(),
-                          )),
-                        ],
-                      ),
-                    );
+      height: 200.h,
+      child: Column(
+        children: [
+          IconButton(
+            icon: Icon(
+              Boxicons.bxs_plus_circle,
+              color: AppColors.primary,
+            ),
+            onPressed: () {
+              _displayBottomSheet(context, EnterExpenseWidget());
+            },
+          ),
+          SizedBox(
+            height: 20,
+          ),
+          Center(
+              child: Text(
+            "No expense yet, \n Create one",
+            textAlign: TextAlign.center,
+            style: TextStyle(),
+          )),
+        ],
+      ),
+    );
   }
 
   Container buildEmptyBudgetContainer(BuildContext context) {
     return Container(
-                          height: 200.h,
-                          child: Column(
-                            children: [
-                              IconButton(
-                                icon: Icon(
-                                  Boxicons.bxs_plus_circle,
-                                  color: AppColors.primary,
-                                ),
-                                onPressed: () {
-                                  _displayBottomSheet(
-                                      context, EnterBudgetWidget());
-                                },
-                              ),
-                              SizedBox(
-                                height: 20,
-                              ),
-                              Center(
-                                  child: Text(
-                                "You haven't set a budget, \n Create one",
-                                textAlign: TextAlign.center,
-                                style: TextStyle(),
-                              )),
-                            ],
-                          ),
-                        );
+      height: 200.h,
+      child: Column(
+        children: [
+          IconButton(
+            icon: Icon(
+              Boxicons.bxs_plus_circle,
+              color: AppColors.primary,
+            ),
+            onPressed: () {
+              _displayBottomSheet(context, EnterBudgetWidget());
+            },
+          ),
+          SizedBox(
+            height: 20,
+          ),
+          Center(
+              child: Text(
+            "You haven't set a budget, \n Create one",
+            textAlign: TextAlign.center,
+            style: TextStyle(),
+          )),
+        ],
+      ),
+    );
   }
 
   Container buildEmptyDataContainer() {
     return Container(
-                            decoration: BoxDecoration(
-                              color: AppColors.primary,
-                              borderRadius: BorderRadius.all(
-                                Radius.circular(10),
-                              ),
-                            ),
-                            height: 100,
-                            child: Center(
-                                child: Text(
-                              " No Data in selected Category",
-                              style:
-                                  TextStyle(color: AppColors.primaryBtnText),
-                            )),
-                          );
+      decoration: BoxDecoration(
+        color: AppColors.primary,
+        borderRadius: BorderRadius.all(
+          Radius.circular(10),
+        ),
+      ),
+      height: 100,
+      child: Center(
+          child: Text(
+        " No Data in selected Category",
+        style: TextStyle(color: AppColors.primaryBtnText),
+      )),
+    );
   }
 
   Container buildBudgetCountContainer() {
     return Container(
-                          width: 166.w,
-                          decoration: BoxDecoration(
-                            border: Border.all(color: Colors.white, width: 0),
-                            borderRadius:
-                                BorderRadius.all(Radius.circular(10)),
-                            color: AppColors.primary,
-                            boxShadow: [
-                              BoxShadow(
-                                color: Color.fromRGBO(
-                                  69,
-                                  91,
-                                  99,
-                                  0.08,
-                                ),
-                                blurRadius: 16.0.w,
-                                spreadRadius: 4.0.w,
-                              )
-                            ],
-                          ),
-                          child: Column(
-                            children: [
-                              SizedBox(
-                                height: 20.h,
-                              ),
-                              Text(
-                                (NumberFormat.currency(name: "N ")
-                                    .format(budgetList
-                                        .map((budget) => budget.amount)
-                                        .toList()
-                                        .fold(
-                                            0,
-                                            (previousValue, amount) =>
-                                                previousValue + amount))
-                                    .toString()),
-                                style: TextStyle(
-                                    fontSize: 11,
-                                    color: AppColors.windowColor
-                                        .withOpacity(.8)),
-                              ),
-                              Text(
-                                "Total Budget",
-                                style: TextStyle(
-                                    fontSize: 15,
-                                    color: AppColors.windowColor),
-                              ),
-                              SizedBox(
-                                height: 20.h,
-                              ),
-                            ],
-                          ),
-                        );
+      width: 166.w,
+      decoration: BoxDecoration(
+        border: Border.all(color: Colors.white, width: 0),
+        borderRadius: BorderRadius.all(Radius.circular(10)),
+        color: AppColors.primary,
+        boxShadow: [
+          BoxShadow(
+            color: Color.fromRGBO(
+              69,
+              91,
+              99,
+              0.08,
+            ),
+            blurRadius: 16.0.w,
+            spreadRadius: 4.0.w,
+          )
+        ],
+      ),
+      child: Column(
+        children: [
+          SizedBox(
+            height: 20.h,
+          ),
+          Text(
+            (NumberFormat.currency(name: "N ")
+                .format(budgetList
+                    .map((budget) => budget.amount)
+                    .toList()
+                    .fold(0, (previousValue, amount) => previousValue + amount))
+                .toString()),
+            style: TextStyle(
+                fontSize: 11, color: AppColors.windowColor.withOpacity(.8)),
+          ),
+          Text(
+            "Total Budget",
+            style: TextStyle(fontSize: 15, color: AppColors.windowColor),
+          ),
+          SizedBox(
+            height: 20.h,
+          ),
+        ],
+      ),
+    );
   }
 
   Container buildExpenseCountContainer() {
@@ -451,9 +438,7 @@ class _WalletState extends State<Wallet> {
       ),
     );
   }
-
 }
-
 
 void _displayBottomSheet(BuildContext context, Widget bottomSheetContent) {
   showModalBottomSheet(
